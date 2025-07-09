@@ -5,8 +5,8 @@ import { CitiesComponent } from "./cities/cities.component";
 import { AproposComponent } from "./apropos/apropos.component";
 import { WebsiteComponent } from "./website-component/website.component";
 import { DetailCityComponent } from "./detail-city/detail-city.component";
-import { BecomeBailleurComponent } from "../bailleur/become-bailleur/become-bailleur.component";
-import { CreateCityComponent } from "../bailleur/create-city/create-city.component";
+// import { BecomeBailleurComponent } from "../bailleur/become-bailleur/become-bailleur.component";
+// import { CreateCityComponent } from "../bailleur/create-city/create-city.component";
 
 
 
@@ -36,14 +36,14 @@ const website_routes : Routes = [
       },
 
       // Ce qui concerne le bailleur
-      {
-        path: 'become-bailleur',
-        component: BecomeBailleurComponent
-      },
-      {
-        path: 'create',
-        component: CreateCityComponent
-      },
+      // {
+      //   path: 'become-bailleur',
+      //   component: BecomeBailleurComponent
+      // },
+      // {
+      //   path: 'create',
+      //   component: CreateCityComponent
+      // },
     ]
   },
 
