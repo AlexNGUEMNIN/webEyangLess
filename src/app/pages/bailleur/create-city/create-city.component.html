@@ -1,0 +1,87 @@
+<div class="mt-20 py-4">
+  <div class="border border-gray-400 rounded-2xl mx-auto md:w-10/12 p-4">
+    <div class="flex flex-row justify-between border-b border-b-gray-300 mb-4 pb-4">
+      <div>
+        <h1 class="text-2xl font-semibold">
+          <i class="fas fa-arrow-left text-appgreen mr-2 cursor-pointer"
+            (click)="back()"></i>
+          Ajouter une cité
+        </h1>
+        
+      </div>
+      <!-- Les étapes -->
+      <div>
+        <span class="text-darkgreen">Etape {{ step }} sur {{ totalSteps }}</span>
+      </div>
+    </div>
+
+    @if (step == 1) {
+      <div>
+        <h2 class="text-xl font-semibold mb-4">Caractéristiques</h2>
+        <div class="flex flex-col md:flex-row justify-between gap-4">
+          <div class="w-1/2 space-y-6">
+
+            <!-- Nom de la cité -->
+            <div class="space-y-2">
+              <span> Nom de la cité</span>
+              <div class="relative">
+                <input
+                  type="email"
+                  placeholder="Entrez le nom de la cité"
+                  class="w-full pl-4 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all duration-200 text-gray-900 placeholder-gray-400"
+                />
+              </div>
+            </div>
+
+            <!-- Localisation de la cité -->
+            <div class="space-y-2">
+              <span> Localisation </span>
+              <div class="relative">
+                <input
+                  type="email"
+                  placeholder="Entrez la localisation"
+                  class="w-full pl-4 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all duration-200 text-gray-900 placeholder-gray-400"
+                />
+              </div>
+            </div>
+
+            <!-- Description de la cité -->
+            <div class="space-y-2">
+              <span> Description </span>
+              <div class="relative">
+                <textarea
+                  type="email"
+                  placeholder="Entrez la description"
+                  class="h-[200px] w-full pl-4 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all duration-200 text-gray-900 placeholder-gray-400"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="w-1/2">
+            <!-- Image principale de la cité -->
+            <div class="space-y-2">
+              <span> Photo de la cité </span>
+              <div class="relative">
+                <textarea
+                  type="email"
+                  placeholder="Entrez la description"
+                  class="h-[200px] w-full pl-4 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all duration-200 text-gray-900 placeholder-gray-400"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bouton next -->
+        <div class="flex flex-row justify-between"> 
+          <span></span>
+          <button class="bg-appgreen w-16 h-16 flex items-center justify-center text-white rounded-full"
+            (click)="nextStep()">
+            <i class="fas fa-arrow-right text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    }
+    
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div
+  class="bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg duration-200"
+>
+  <div class="relative h-64">
+    <img
+      [src]="city.image"
+      [alt]="city.name"
+      class="w-full h-full object-cover"
+    />
+    <span class="absolute top-0 right-0 bg-white font-semibold text-amber-900 py-1 px-2 rounded-full mt-2 mr-2"> 4,3 <i class="fas fa-star text-yellow-500 ml-1"></i></span>
+  </div>
+  <div class="p-6">
+    <div class="flex justify-between items-start mb-2">
+      <h3 class="text-2xl font-semibold text-gray-900">
+        {{ city.price }} <span class="text-sm">{{ city.currency }}</span>
+        <span class="text-sm font-normal text-gray-600">/ {{ city.period }}</span>
+      </h3>
+    </div>
+    <div class="flex items-center text-gray-600 mb-2">
+      <!-- <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+      </svg> -->
+      <i class="fas fa-building mr-3"></i>
+      {{ city.location }}
+    </div>
+    <p class="text-gray-600 text-sm mb-4">{{ city.distance }}</p>
+    <div class="flex flex-row justify-between items-center">
+      <span class="bg-yellow-600 text-white h-fit rounded-full px-3 py-1 text-sm">
+        30 chambres libres
+      </span>
+      <div class="flex items-center justify-center bg-appgreen text-white rounded-full w-10 h-10 duration-200 hover:bg-darkgreen cursor-pointer">
+        <i class="fas fa-arrow-right"></i>
+      </div>
+
+    </div>
+  </div>
+</div>

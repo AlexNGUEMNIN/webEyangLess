@@ -1,0 +1,102 @@
+<!-- Hero Section with Carousel -->
+<section class="relative h-screen overflow-hidden">
+  <!-- Carousel Background -->
+  <div class="absolute inset-0">
+    <div class="relative w-full h-full">
+      @for (image of carouselImages; track $index) {
+        <div
+          class="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+          [class.opacity-100]="$index === currentSlide"
+          [class.opacity-0]="$index !== currentSlide"
+        >
+          <img
+            [src]="image.url"
+            [alt]="image.alt"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+      }
+
+    </div>
+  </div>
+
+  <!-- Content Overlay -->
+  <div class="relative z-10 flex flex-col justify-center items-center h-full text-white px-4">
+    <!-- Hero Text -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+        Trouve la chambre<br>
+        qui te convient<br>
+        Et réserves là <span class="text-teal-400">ici</span>
+      </h1>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="w-full max-w-4xl bg-white rounded-xl p-6 shadow-2xl">
+      <div class="text-sm text-gray-600 mb-4">
+        Rechercher une chambre (Selon tes critères)
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <!-- Locality -->
+        <div class="relative">
+          <select
+            [(ngModel)]="searchForm.locality"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent text-gray-800 appearance-none bg-white"
+          >
+            <option value="">Localité</option>
+            <option value="eyang">Eyang</option>
+          </select>
+          <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+
+        <!-- Budget -->
+        <div class="relative">
+          <select
+            [(ngModel)]="searchForm.budget"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent text-gray-800 appearance-none bg-white"
+          >
+            <option value="">Budget</option>
+            <option value="40000-50000">40.000 - 50.000 FCFA</option>
+            <option value="50000-60000">50.000 - 60.000 FCFA</option>
+            <option value="60000-70000">60.000 - 70.000 FCFA</option>
+            <option value="70000-80000">70.000 - 80.000 FCFA</option>
+            <option value="80000-100000">80.000 - 100.000 FCFA</option>
+            <option value="100000+">100.000+ FCFA</option>
+          </select>
+          <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+
+        <!-- Room Type -->
+        <div class="relative">
+          <select
+            [(ngModel)]="searchForm.roomType"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent text-gray-800 appearance-none bg-white"
+          >
+            <option value="">Type de chambre</option>
+            <option value="individuelle">Individuelle</option>
+            <option value="double">Double</option>
+          </select>
+          <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+
+        <!-- Search Button -->
+        <button
+          (click)="onSearch()"
+          class="bg-teal-500 text-white p-3 rounded-lg hover:bg-teal-600 transition-colors flex items-center justify-center"
+        >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          Rechercher
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
